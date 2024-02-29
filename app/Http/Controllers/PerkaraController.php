@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CatatanPerkara;
+use App\Models\Hakim;
+use App\Models\Jaksa;
+use App\Models\KategoriTindakPidana;
 use Illuminate\Http\Request;
 
 class PerkaraController extends Controller
@@ -11,7 +15,8 @@ class PerkaraController extends Controller
      */
     public function index()
     {
-        return view('pages.perkara.index');
+
+        return view('pages.perkara.index',);
     }
 
     /**
@@ -19,7 +24,16 @@ class PerkaraController extends Controller
      */
     public function create()
     {
-        return view('pages.perkara.create');
+        $hakims = Hakim::all();
+        $kategoris = KategoriTindakPidana::all();
+        $jaksas = Jaksa::all();
+        $catatans = CatatanPerkara::all();
+        return view('pages.perkara.create', [
+            'hakims' => $hakims,
+            'kategoris' => $kategoris,
+            'jaksas' => $jaksas,
+            'catatans' => $catatans,
+        ]);
     }
 
     /**
@@ -27,7 +41,6 @@ class PerkaraController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
