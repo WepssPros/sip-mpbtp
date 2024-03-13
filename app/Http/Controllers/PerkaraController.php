@@ -28,11 +28,13 @@ class PerkaraController extends Controller
         $kategoris = KategoriTindakPidana::all();
         $jaksas = Jaksa::all();
         $catatans = CatatanPerkara::all();
+        $jenistindakpidana = KategoriTindakPidana::all();
         return view('pages.perkara.create', [
             'hakims' => $hakims,
             'kategoris' => $kategoris,
             'jaksas' => $jaksas,
             'catatans' => $catatans,
+            'jenistindakpidana' => $jenistindakpidana,
         ]);
     }
 

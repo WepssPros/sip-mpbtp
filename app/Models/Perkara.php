@@ -37,6 +37,11 @@ class Perkara extends Model
         return $this->belongsTo(Hakim::class, 'hakim_id');
     }
 
+    public function penuntut()
+    {
+        return $this->belongsTo(Penuntut::class, 'penuntut_id');
+    }
+
     public function kategoritindakpidana()
     {
         return $this->belongsTo(KategoriTindakPidana::class, 'jenis_tindak_pidana_id');
