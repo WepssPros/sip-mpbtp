@@ -28,6 +28,8 @@
 <script src="{{asset('../../admin/dist/js/pages/dashboards/dashboard1.j')}}s"></script>
 
 
+<script src="{{asset('../../admin/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+<script src="{{asset('../../admin/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
 
 <script src="{{asset('../../admin/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
 <!-- start - This is for export functionality only -->
@@ -43,3 +45,17 @@
 <script src="{{asset('../../admin/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('../../admin/assets/libs/select2/dist/js/select2.min.js')}}"></script>
 <script src="{{asset('../../admin/dist/js/pages/forms/select2/select2.init.js')}}"></script>
+<script src="{{asset('../../admin/dist/js/pages/samplepages/jquery.PrintArea.js')}}"></script>
+<script>
+    $(function() {
+        $("#print").click(function() {
+            var mode = 'iframe'; //popup
+            var close = mode == "popup";
+            var options = {
+                mode: mode,
+                popClose: close
+            };
+            $("div.printableArea").printArea(options);
+        });
+    });
+</script>

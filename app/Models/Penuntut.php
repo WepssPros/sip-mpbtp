@@ -11,7 +11,7 @@ class Penuntut extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'no_tuntuntan',
+        'no_tuntutan',
         'nama_penuntut',
         'nama_terdakwa',
         'umur_terdakwa',

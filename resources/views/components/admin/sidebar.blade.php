@@ -31,6 +31,12 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
+                            <a href="{{route('dashboard.penuntut.index')}}" class="sidebar-link">
+                                <i class="far fa-list-alt"></i>
+                                <span class="hide-menu"> Data Master Penuntut </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="{{route('dashboard.perkara.index')}}" class="sidebar-link">
                                 <i class="far fa-list-alt"></i>
                                 <span class="hide-menu"> Data Master Perkara </span>
@@ -80,10 +86,34 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-small-cap">
+                    <i class="mdi mdi-dots-horizontal"></i>
+                    <span class="hide-menu">Upload Arsip / Pengarsipan</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.arsip.index')}}" aria-expanded="false">
+                        <i class="mdi mdi-content-paste"></i>
+                        <span class="hide-menu">Arsip Data</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.arsip.create')}}" aria-expanded="false">
+                        <i class="mdi mdi-cloud-upload"></i>
+                        <span class="hide-menu">Upload Arsip</span>
+                    </a>
+                </li>
                 <li class="nav-small-cap">
                     <i class="mdi mdi-dots-horizontal"></i>
                     <span class="hide-menu">Menu</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.penuntut.create')}}" aria-expanded="false">
+                        <i class="mdi mdi-content-paste"></i>
+                        <span class="hide-menu">Buat Data Tuntutan Perkara</span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"

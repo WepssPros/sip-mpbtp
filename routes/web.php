@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\CatatanPerkaraController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\HakimController;
 use App\Http\Controllers\JaksaController;
 use App\Http\Controllers\KategoriPidanaController;
 use App\Http\Controllers\PengacaraController;
+use App\Http\Controllers\PenuntutController;
 use App\Http\Controllers\PerkaraController;
 use App\Http\Controllers\PihakTerlibatController;
 use App\Http\Controllers\SidangController;
@@ -41,6 +43,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::middleware(['admin'])->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+            Route::resource('arsip', ArsipController::class);
+            Route::resource('penuntut', PenuntutController::class);
             Route::resource('perkara', PerkaraController::class);
             Route::resource('hakim', HakimController::class);
             Route::resource('jaksa', JaksaController::class);
