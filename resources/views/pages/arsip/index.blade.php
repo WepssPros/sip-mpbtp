@@ -80,9 +80,14 @@
                                     <td>{{ $arsip->tgl_arsip }}</td> <!-- Sesuaikan dengan atribut tanggal arsip -->
                                     <td>
                                         <div class="btn-group">
+                                            <form action="{{route('dashboard.arsip.destroy' ,$arsip->id)}}"
+                                                method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-sm btn-danger" type="submit"
+                                                    style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus</button>
+                                            </form>
 
-                                            <button class="btn btn-sm btn-danger"
-                                                style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus</button>
                                         </div>
                                     </td>
                                     <td></td>

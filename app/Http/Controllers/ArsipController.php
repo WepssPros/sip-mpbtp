@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ArsipPerkara;
 use App\Models\Perkara;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class ArsipController extends Controller
 {
@@ -64,7 +66,7 @@ class ArsipController extends Controller
 
         ArsipPerkara::create($filesData);
 
-        return redirect()->route('dashboard.arsip.index');
+        return redirect()->route('dashboard.arsip.index')->with('success', 'Data Arsip Telah Di Tambahkan');
     }
 
     /**
@@ -96,6 +98,11 @@ class ArsipController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Hapus data arsip
+        $arsip = ArsipPerkara::findOrFail($id);
+        $arsip->delete();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('dashboard.arsip.index')->with('success', 'Data arsip berhasil dihapus');
     }
 }

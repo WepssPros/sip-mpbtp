@@ -51,6 +51,7 @@
 
         <!-- All Jquery -->
         @include('components.admin.js')
+        @include('sweetalert::alert')
     </body>
 
 </html>

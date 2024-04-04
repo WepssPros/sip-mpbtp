@@ -156,11 +156,10 @@
     <!-- Column -->
 </div>
 
-<div class="row">
+<div class="row" hidden>
     <div class="col-md-12">
         <div class="card card-body printableArea">
-            <h3><b>NO TUNTUTAN</b> <span class="pull-right">{{$penuntut->no_tuntutan}}</span></h3>
-            <hr>
+
 
             <div class="row">
                 <html>
@@ -174,6 +173,7 @@
                             }
 
                             .rangkasurat {
+
                                 width: 980px;
                                 margin: 0 auto;
                                 background-color: #fff;
@@ -216,6 +216,27 @@
                                 /* Geser ke tengah */
                             }
 
+                            .kanan {
+                                text-align: left;
+                                line-height: 5px;
+                                padding-right: 100px;
+                                /* Geser ke tengah */
+                                padding-left: 150px;
+                                padding-bottom: 35px;
+
+
+                            }
+
+                            .kanan1 {
+                                text-align: left;
+                                line-height: 5px;
+                                padding-right: 10px;
+                                /* Geser ke tengah */
+                                padding-left: 350px;
+                                padding-bottom: 35px;
+
+                            }
+
                             .logo-container {
                                 width: 140px;
                                 float: right;
@@ -248,14 +269,16 @@
                             <table width="100%" class="table1">
                                 <tr>
                                     <td class="logo-container">
-                                        <img src="{{asset('../admin/assets/foto/logopengadilan.jpeg')}}">
+                                        <img src="{{asset('../admin/assets/foto/logo-tag 1.png')}}">
                                     </td>
                                     <td class="tengah">
-                                        <h1>PENGADILAN NEGRI SUNGAI PENUH</h1>
-                                        <h2>Telepon Nomor 0748 - 21186</h2>
-                                        <h3>Jalan Depati Prabo Nomor.24</h3>
-                                        <h4>Kota Sungai Penuh 37114</h4>
-                                        <b>www.pn-sungaipenuh.go.id</b>
+                                        <h4>KEJAKSAAN REPUBLIK INDONESIA</h4>
+                                        <h4>KEJAKSAAN TINGGI JAMBI</h4>
+                                        <h1><B>KEJAKSAAN NEGERI SUNGAI PENUH</B></h1>
+                                        <h5>JL. Depati Prabo, Pondok Tinggi Kota Sungai Penuh 37111</h5>
+                                        <h5>Telp.(0748) 21328 fax. (0748) 22272 <u><a
+                                                    href="">www.kejari-sungaipenuh.go.id</a></u>
+                                        </h5>
                                         <h1></h1>
                                     </td>
                                 </tr>
@@ -353,13 +376,152 @@
                                 <table class="">
                                     <tr>
                                         <td class="kiri">
-                                            <p>Nama Terduga : {{$penuntut->nama_terdakwa}}</p>
+                                            <p>Nomor : {{$penuntut->no_tuntutan}}</p>
+                                        </td>
+
+                                        <td class="kanan">
+                                            Sungai Penuh, {{$penuntut->tgl_tuntutan}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kiri">
+                                            <p>Sifat : Biasa</p>
                                         </td>
 
                                     </tr>
                                     <tr>
                                         <td class="kiri">
-                                            <p>Umur Terduga: {{$penuntut->umur_terdakwa}} Tahun</p>
+                                            <p>Lampiran : ---</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kiri">
+                                            <p>Prihal : Pemberitahuan tindak lanjut atas
+                                                <br>
+                                                <br>
+                                                <br><br>
+                                                laporan pengaduan
+                                                <br>
+                                                <br>
+                                                <br>
+                                                -----------------------------------------------------
+                                            </p>
+                                        </td>
+                                        <td class="kanan">
+                                            <p>Kepada Yth,
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                {{$penuntut->nama_terdakwa}}
+                                                <br>
+                                                <br>
+                                                <br>
+                                            <p>DI -</p>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <p style="text-decoration: underline; text-underline-position:;">
+                                                <b>TEMPAT</b>
+                                            </p>
+                                            </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </table>
+
+                                <br>
+                                <br>
+                                <table style="margin: 0 auto; margin-left: 10%; margin-right:10%">
+                                    <tr>
+                                        <td style="text-align: justify;">
+                                            <p style="text-align: justify; margin-bottom: em;">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sehubung dengan surat
+                                                laporan pengaduan saudara
+                                                kepada Kepala Kejaksaan
+                                                Negri Sungai Penuh
+                                                Nomor: <b>{{$penuntut->no_tuntutan}}, {{$penuntut->kasus_dugaan}},</b>
+                                                kami
+                                                sampaikan bahwa
+                                                setelah dilakukan pra penyelidikan (pengumpulan
+                                                data dan bahan keterangan) atas laporan pengaduan saudara tersebut,
+                                                berdasarkan hasil pra penyelidikan terhadap
+                                                laporan pengaduan, disimpulkan dapat dilanjutkan karena ditemukan suatu
+                                                peristiwa yang diduga sebagai tindak pidana
+                                                .
+                                                <br><br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Demikian untuk maklum.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <br>
+                                <br>
+                                <table class="">
+                                    <tr>
+                                        <td class="kiri">
+
+                                        </td>
+
+                                        <td class="kanan">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kiri">
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="kiri">
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kiri">
+
+                                        </td>
+                                        <td class="kanan1">
+                                            <p>An, KEPALA KEJAKSAANNEGRI SUNGAI PENUH
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                KEPALA SEKSI TINDAK PIDANA KHUSUS
+                                                <br>
+                                                <br>
+                                                <br>
+                                            <p></p>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <p></p>
+                                            <p style="text-decoration: underline; text-underline-position:;">JASA ALEX
+                                                P.HUTAHURUK,SH</p>
+                                            </p>
+                                            <p>Jaksa Muda Nip. 19811219 200712 1 001</p>
                                         </td>
 
                                     </tr>
