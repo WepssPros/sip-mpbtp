@@ -36,34 +36,57 @@
                             <tr>
                                 <th rowspan="2">No Catatan Perkara</th>
                                 <th colspan="3" class="text-center">Detail Informasi</th>
-                                <th colspan="1">Isi Catatan</th>
-                                <th colspan="1">Aksi</th>
+                                <th rowspan="2">Aksi</th>
+
                             </tr>
                             <tr>
-                                <th>ID Perkara</th>
                                 <th>Jaksa Pembuat</th>
                                 <th>Tanggal Catatan</th>
                                 <th>Isi Catatan</th>
-                                <th>Aksi</th>
-                                <th></th>
+                                <th rowspan="1">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($cps as $cp)
                             <tr>
-                                <td>01/23/441BS5</td>
-                                <td>001</td>
-                                <td>jaksa1</td>
-                                <td>2023-01-10</td>
-                                <td>Menetapkan jadwal sidang untuk perkara korupsi.</td>
+                                <td>{{$cp->perkara->nomor_perkara}}</td>
+                                <td>{{$cp->jaksa->nama_jaksa}}</td>
+                                <td>{{$cp->tgl_catatan}}</td>
+                                <td>{{$cp->isicatatan}}</td>
                                 <td>
+                                    <div class="download-links">
+                                        @for ($i = 1; $i <= 5; $i++) @if (!empty($cp["file_$i"])) <div>
+                                            <i class="mdi mdi-cloud-download"></i>
+                                            <a href="{{ asset('storage/' . $cp["file_$i"]) }}"
+                                                class="hide-menu">Download Dokumen</a>
+                                    </div>
+                                    <div>
+                                        <i class="mdi mdi-file-check"></i>
+                                        <span href="#"
+                                            class="hide-menu">{{ pathinfo($cp["file_$i"], PATHINFO_EXTENSION) }}</span>
+                                    </div>
+                                    <div>
+                                        <i class="mdi mdi-file-chart"></i>
+                                        <span href="#" class="hide-menu">{{ round($cp["size_$i"] / 1024) }} Kb</span>
+                                    </div>
+                                    @endif
+                                    @endfor
                                     <div class="btn-group">
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-danger"
-                                            style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus</button>
+                                        <a href="{{ route('dashboard.catatanperkara.edit', $cp->id) }}"
+                                            class="btn btn-sm btn-primary">Edit</a>
+                                        <form action="{{ route('dashboard.catatanperkara.destroy', $cp->id) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger"
+                                                style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
-                                <td></td>
+                                <th></th>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -50,7 +50,7 @@
                                     <span class="input-group-text" id="basic-addon1"><i
                                             class="fas fa-address-card"></i></span>
                                 </div>
-                                <input type="text" id="no_perkara" name="no_perkara" class="form-control"
+                                <input type="text" id="no_perkara" name="nomor_perkara" class="form-control"
                                     placeholder=".../..../....../...." maxlength="18" required>
                                 <script>
                                     // Mendapatkan elemen input
@@ -100,7 +100,32 @@
                                                 class="fas fa-calendar-alt"></i></span>
                                     </div>
                                     <input type="date" class="form-control" placeholder="Tanggal Pendaftaran "
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                        name="tanggal_pendaftaran" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label col-form-label">Cari No Tuntutan
+                                </label>
+                                <div class="input-group">
+                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
+                                        name="penuntut_id" aria-label="Username" aria-describedby="basic-addon1"
+                                        aria-describedby="basic-addon1">
+                                        <option>Cari No Tuntutan</option>
+                                        <optgroup label="Nomor Tuntuan Terdata">
+                                            @foreach ($penuntuts as $penuntut)
+                                            <option value="{{$penuntut->id}}">
+                                                {{$penuntut->no_tuntutan}}
+                                            </option>
+                                            @endforeach
+
+
+                                        </optgroup>
+
+                                    </select>
+
                                 </div>
                             </div>
                         </div>
@@ -110,13 +135,14 @@
                                     Pidana</label>
                                 <div class="input-group">
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
-                                        aria-label="Username" aria-describedby="basic-addon1"
-                                        aria-describedby="basic-addon1">
+                                        name="jenis_tindak_pidana_id" aria-label="Username"
+                                        aria-describedby="basic-addon1" aria-describedby="basic-addon1">
                                         <option>Cari Jenis Tindak Pidana</option>
                                         <optgroup label="Jenis Tindak Pidana">
                                             @foreach ($kategoris as $kategori)
                                             <option value="{{$kategori->id}}">
-                                                {{$kategori->no_kategori_pidana}},{{$kategori->nama_kategori}}</option>
+                                                {{$kategori->no_kategori_pidana}},{{$kategori->nama_kategori}}
+                                            </option>
                                             @endforeach
 
 
@@ -132,11 +158,11 @@
                             <div class="input-group">
 
                                 <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
-                                    aria-label="Username" aria-describedby="basic-addon1"
+                                    name="status_perkara" aria-label="Username" aria-describedby="basic-addon1"
                                     aria-describedby="basic-addon1">
                                     <option>Pilih Status Perkara</option>
-                                    <option value="">Open</option>
-                                    <option value="">Close</option>
+                                    <option value="Open">Open</option>
+                                    <option value="Close">Close</option>
 
                                 </select>
 
@@ -149,11 +175,14 @@
                                 <div class="input-group">
 
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
-                                        aria-label="Username" aria-describedby="basic-addon1"
+                                        name="jaksa_id" aria-label="Username" aria-describedby="basic-addon1"
                                         aria-describedby="basic-addon1">
                                         <option>Pilih Jaksa</option>
-                                        <option value="">Open</option>
-                                        <option value="">Close</option>
+
+                                        @foreach ($jaksas as $jaksa)
+                                        <option value="{{$jaksa->id}}">{{$jaksa->nama_jaksa}}</option>
+                                        @endforeach
+
 
                                     </select>
                                 </div>
@@ -166,13 +195,45 @@
                                 <div class="input-group">
 
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
-                                        aria-label="Username" aria-describedby="basic-addon1"
+                                        name="hakim_id" aria-label="Username" aria-describedby="basic-addon1"
                                         aria-describedby="basic-addon1">
                                         <option>Pilih Hakim</option>
-                                        <option value="">Open</option>
-                                        <option value="">Close</option>
+                                        @foreach ($hakims as $hakim)
+                                        <option value="{{$hakim->id}}">{{$hakim->nama_hakim}}</option>
+
+                                        @endforeach
+
 
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label col-form-label">Nama Terdakwa
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon11"><i
+                                                class="fas fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Nama Terdakwa / Tersangka "
+                                        name="nama_terdakwa" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label col-form-label">Alamat Terdakwa
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon11"><i
+                                                class="fas fa-calendar-alt"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Alamat Terdakwa "
+                                        name="alamat_terdakwa" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>
@@ -186,7 +247,7 @@
                                                 class="fas fa-calendar-alt"></i></span>
                                     </div>
                                     <input type="date" class="form-control" placeholder="Tanggal Putusan "
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                        name="tanggal_putusan" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>

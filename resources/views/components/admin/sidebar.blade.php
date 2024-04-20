@@ -123,22 +123,22 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('index')}}"
-                        aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.sidang.create')}}" aria-expanded="false">
                         <i class="mdi mdi-content-paste"></i>
                         <span class="hide-menu">Buat Data Sidang</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('index')}}"
-                        aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.catatanperkara.create')}}" aria-expanded="false">
                         <i class="mdi mdi-content-paste"></i>
                         <span class="hide-menu">Buat Data Catatan Perkara</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('index')}}"
-                        aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.pihakterlibat.create')}}" aria-expanded="false">
                         <i class="mdi mdi-content-paste"></i>
                         <span class="hide-menu">Buat Data Pihak Terlibat</span>
                     </a>
@@ -150,19 +150,13 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('index')}}"
-                        aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('dashboard.laporan-index') }}" aria-expanded="false">
                         <i class="mdi mdi-content-paste"></i>
-                        <span class="hide-menu">Laporan Data Sidang</span>
+                        <span class="hide-menu">Laporan Data Perkara Lengkap</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('index')}}"
-                        aria-expanded="false">
-                        <i class="mdi mdi-content-paste"></i>
-                        <span class="hide-menu">Laporan Catatan Perkara</span>
-                    </a>
-                </li>
+
                 <li class="nav-small-cap">
                     <i class="mdi mdi-dots-horizontal"></i>
                     <span class="hide-menu">Extra</span>

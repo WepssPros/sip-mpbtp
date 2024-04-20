@@ -15,6 +15,9 @@ class CatatanPerkara extends Model
         'jaksa_id',
         'tgl_catatan',
         'isicatatan',
+        'file_1',
+        'type_1',
+        'size_1',
     ];
 
 

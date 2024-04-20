@@ -17,7 +17,10 @@ return new class extends Migration
             $table->biginteger('jaksa_id')->nullable();
             $table->date('tgl_catatan')->nullable();
             $table->text('isicatatan')->nullable();
-
+            
+            $table->text('file_1')->nullable();
+            $table->text('type_1')->nullable();
+            $table->unsignedInteger('size_1')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

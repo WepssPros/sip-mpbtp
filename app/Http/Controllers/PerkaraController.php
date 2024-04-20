@@ -6,6 +6,8 @@ use App\Models\CatatanPerkara;
 use App\Models\Hakim;
 use App\Models\Jaksa;
 use App\Models\KategoriTindakPidana;
+use App\Models\Penuntut;
+use App\Models\Perkara;
 use Illuminate\Http\Request;
 
 class PerkaraController extends Controller
@@ -15,8 +17,8 @@ class PerkaraController extends Controller
      */
     public function index()
     {
-
-        return view('pages.perkara.index',);
+        $perkaras = Perkara::all();
+        return view('pages.perkara.index', compact('perkaras'));
     }
 
     /**
@@ -29,7 +31,9 @@ class PerkaraController extends Controller
         $jaksas = Jaksa::all();
         $catatans = CatatanPerkara::all();
         $jenistindakpidana = KategoriTindakPidana::all();
+        $penuntuts =  Penuntut::all();
         return view('pages.perkara.create', [
+            'penuntuts' => $penuntuts,
             'hakims' => $hakims,
             'kategoris' => $kategoris,
             'jaksas' => $jaksas,
@@ -43,6 +47,24 @@ class PerkaraController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi input
+        $request->validate([
+            'penuntut_id' => 'required',
+            'hakim_id' => 'required',
+            'jaksa_id' => 'required',
+            'jenis_tindak_pidana_id' => 'required',
+            'nomor_perkara' => 'required',
+            'tanggal_pendaftaran' => 'required',
+            'nama_terdakwa' => 'required',
+            'tanggal_putusan' => 'required',
+            'alamat_terdakwa' => 'required',
+            'status_perkara' => 'required',
+        ]);
+
+        // Buat perkara baru
+        $perkara = Perkara::create($request->all());
+
+        return redirect()->route('dashboard.perkara.index')->with('success', 'Perkara created successfully');
     }
 
     /**
@@ -64,16 +86,37 @@ class PerkaraController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Perkara $perkara)
     {
-        //
+        // Validasi input
+        $request->validate([
+            'penuntut_id' => 'required',
+            'hakim_id' => 'required',
+            'jaksa_id' => 'required',
+            'jenis_tindak_pidana_id' => 'required',
+            'nomor_perkara' => 'required',
+            'tanggal_pendaftaran' => 'required',
+            'nama_terdakwa' => 'required',
+            'tanggal_putusan' => 'required',
+            'alamat_terdakwa' => 'required',
+            'status_perkara' => 'required',
+        ]);
+
+        // Update perkara
+        $perkara->update($request->all());
+
+        return redirect()->route('dashboard.perkara.index')->with('success', 'Perkara updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+
+    public function destroy(Perkara $perkara)
     {
-        //
+        // Hapus perkara
+        $perkara->delete();
+
+        return redirect()->route('dashboard.perkara.index')->with('success', 'Perkara deleted successfully');
     }
 }

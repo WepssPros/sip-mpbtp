@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('tipe_pihak')->nullable();
             $table->string('no_hp_pihak_terlibat')->nullable();
 
+            $table->text('file_1')->nullable();
+            $table->text('type_1')->nullable();
+            $table->unsignedInteger('size_1')->nullable();
+            
             $table->softDeletes();
             $table->timestamps();
         });

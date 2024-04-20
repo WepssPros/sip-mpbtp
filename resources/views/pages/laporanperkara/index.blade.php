@@ -62,9 +62,8 @@
                                 <td>{{$perkara->tanggal_putusan}}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-danger"
-                                            style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus</button>
+                                        <a href="{{ route('dashboard.laporan-details', $perkara->id) }}"
+                                            class="btn btn-sm btn-primary">Show / Detail</a>
                                     </div>
                                 </td>
                                 <td>
