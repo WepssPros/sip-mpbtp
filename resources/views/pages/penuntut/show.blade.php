@@ -160,7 +160,6 @@
     <div class="col-md-12">
         <div class="card card-body printableArea">
 
-
             <div class="row">
                 <html>
 

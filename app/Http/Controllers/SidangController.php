@@ -13,7 +13,8 @@ class SidangController extends Controller
      */
     public function index()
     {
-        return view('pages.sidang.index');
+        $sidangs = Sidang::all();
+        return view('pages.sidang.index', compact('sidangs'));
     }
 
     /**
@@ -36,7 +37,7 @@ class SidangController extends Controller
             'perkara_id' => 'nullable|exists:perkaras,id',
             'tgl_sidang' => 'nullable|date',
             'waktu_mulai' => 'nullable|date_format:H:i',
-            'waktu_selesai' => 'nullable|date_format:H:i|after_or_equal:waktu_mulai',
+            'waktu_selesai' => 'nullable|date_format:H:i',
             'ruang_sidang' => 'nullable|string|max:255',
         ]);
 
@@ -77,7 +78,7 @@ class SidangController extends Controller
             'perkara_id' => 'nullable|exists:perkaras,id',
             'tgl_sidang' => 'nullable|date',
             'waktu_mulai' => 'nullable|date_format:H:i',
-            'waktu_selesai' => 'nullable|date_format:H:i|after_or_equal:waktu_mulai',
+            'waktu_selesai' => 'nullable|date_format:H:i',
             'ruang_sidang' => 'nullable|string|max:255',
         ]);
 

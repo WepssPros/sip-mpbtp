@@ -55,12 +55,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($sidangs as $sidang)
                             <tr>
-                                <td>01/23/441BS5</td>
-                                <td>2023-01-05</td>
-                                <td>09:00</td>
-                                <td>12:00</td>
-                                <td>A2</td>
+                                <td>{{$sidang->perkara->nomor_perkara}}5</td>
+                                <td>{{$sidang->tgl_sidang}}</td>
+                                <td>{{$sidang->waktu_mulai}}</td>
+                                <td>{{$sidang->waktu_selesai}}</td>
+                                <td>{{$sidang->ruang_sidang}}</td>
 
                                 <td>
                                     <div class="btn-group">
@@ -72,6 +73,7 @@
                                 <td>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
