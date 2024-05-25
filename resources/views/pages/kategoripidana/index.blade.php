@@ -57,14 +57,22 @@
                                 <td>{{$item->nama_kategori}}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-danger"
-                                            style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;">Hapus</button>
+
+                                        <form action="{{ route('dashboard.kategoripidana.destroy', $item->id) }}"
+                                            method="POST" style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger text-white"
+                                                style="margin-left: 5px; border-top-left-radius: 0; border-bottom-left-radius: 0;"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus kategori  ini?')">Hapus</button>
+                                        </form>
                                     </div>
                                 </td>
                                 <td></td>
                             </tr>
+
                             @endforeach
+
                         </tbody>
                     </table>
                 </div>

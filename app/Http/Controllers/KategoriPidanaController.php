@@ -79,6 +79,15 @@ class KategoriPidanaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        $kategori = KategoriTindakPidana::find($id);
+
+        // Jika kategori ditemukan, hapus data tersebut
+        if ($kategori) {
+            $kategori->delete();
+            return redirect()->route('dashboard.kategoripidana.index')->with('success', 'Kategori tindak pidana berhasil dihapus.');
+        } else {
+            return redirect()->route('dashboard.kategoripidana.index')->with('error', 'Kategori tindak pidana tidak ditemukan.');
+        }
     }
 }
