@@ -34,4 +34,19 @@ class ArsipPerkara extends Model
     {
         return $this->belongsTo(Perkara::class);
     }
+    public function getTotalSizeInMB()
+    {
+        $totalSize = 0;
+
+        // Menghitung total ukuran data dari file 1 sampai file 5
+        for ($i = 1; $i <= 5; $i++) {
+            $sizeField = 'size_' . $i;
+            if (!empty($this->$sizeField)) {
+                $totalSize += $this->$sizeField;
+            }
+        }
+
+        // Mengembalikan total ukuran dalam MB
+        return $totalSize;
+    }
 }

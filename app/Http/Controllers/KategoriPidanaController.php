@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KategoriTindakPidana;
 use Illuminate\Http\Request;
 
 class KategoriPidanaController extends Controller
@@ -11,7 +12,8 @@ class KategoriPidanaController extends Controller
      */
     public function index()
     {
-        return view('pages.kategoripidana.index');
+        $kategoris = KategoriTindakPidana::all();
+        return view('pages.kategoripidana.index', compact('kategoris'));
     }
 
     /**
@@ -19,7 +21,7 @@ class KategoriPidanaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.kategoripidana.create');
     }
 
     /**
@@ -27,9 +29,27 @@ class KategoriPidanaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        // Validasi input
+        $request->validate([
+            'no_kategori_pidana' => 'required|string|max:255',
+            'nama_kategori' => 'required|string|max:15',
 
+        ]);
+
+        // Buat instansiasi model
+        $kategori = new KategoriTindakPidana;
+
+        // Isi model dengan data dari request
+        $kategori->no_kategori_pidana = $request->no_kategori_pidana;
+        $kategori->nama_kategori = $request->nama_kategori;
+
+
+        // Simpan data ke database
+        $kategori->save();
+
+        // Redirect atau response sesuai kebutuhan
+        return redirect()->route('dashboard.kategoripidana.index')->with('success', 'Data Kategori Berhasil Di buat');
+    }
     /**
      * Display the specified resource.
      */

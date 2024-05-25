@@ -351,6 +351,7 @@
                 .table-standard {
                     width: 100%;
                     border-collapse: collapse;
+                    border-color: #000;
                 }
 
                 /* Style untuk baris genap */
@@ -363,16 +364,19 @@
                 .table-standard td {
                     padding: 8px;
                     text-align: left;
-                    border-bottom: 1px solid #ddd;
+                    border-bottom: 2px solid black;
+                    /* Border bawah agak tebal, warna hitam */
                 }
 
                 /* Style untuk header kolom */
                 .table-standard th {
                     background-color: #4CAF50;
                     color: black;
-                    /* Ubah warna teks menjadi hitam */
+                    /* Warna teks hitam */
                     font-weight: bold;
-                    /* Membuat teks menjadi tebal */
+                    /* Teks tebal */
+                    border-bottom: 2px solid black;
+                    /* Border bawah agak tebal, warna hitam */
                 }
 
                 .table1 {

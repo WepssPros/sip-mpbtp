@@ -28,7 +28,11 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Data Master Kategori Pidana </h4>
-
+                <div class="pt-2">
+                    <a class="btn btn-primary" href="{{route('dashboard.kategoripidana.create')}}" role="button">Buat
+                        Data
+                        Kategori Tindak Pidana +</a>
+                </div>
                 <div class="table-responsive">
                     <table id="complex_head_col" class="table table-striped table-bordered display responsive"
                         style="width:100%">
@@ -46,10 +50,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($kategoris as $index=> $item)
                             <tr>
 
-                                <td>01/23/441BS5</td>
-                                <td>Korupsi</td>
+                                <td>{{$item->no_kategori_pidana}}</td>
+                                <td>{{$item->nama_kategori}}</td>
                                 <td>
                                     <div class="btn-group">
                                         <button class="btn btn-sm btn-primary">Edit</button>
@@ -59,6 +64,7 @@
                                 </td>
                                 <td></td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

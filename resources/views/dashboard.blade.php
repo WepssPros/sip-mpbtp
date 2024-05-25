@@ -30,8 +30,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-emoticon font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Clients</p>
+                            <i class="mdi mdi-archive font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Total Arsip Tersedia</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">23</h1>
@@ -55,18 +55,31 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-image font-20  text-muted"></i>
-                            <p class="font-16 m-b-5">New Projects</p>
+                            <i class="mdi mdi-harddisk font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Data Storage Arsip</p>
                         </div>
                         <div class="ml-auto">
-                            <h1 class="font-light text-right">169</h1>
+                            <!-- Konversi total ukuran ke GB jika lebih besar dari 1000000 KB -->
+                            @if($totalsize >= 1000000)
+                            <h1 class="font-16 text-right">{{ round($totalsize / 1000000, 2) }}GB/1000GB</h1>
+                            <!-- Konversi total ukuran ke MB jika lebih besar dari 1000 KB -->
+                            @elseif($totalsize >= 1000)
+                            <h1 class="font-16 text-right">{{ round($totalsize / 1000, 2) }}MB/1000GB</h1>
+                            <!-- Tampilkan dalam KB jika total kurang dari 1000 KB -->
+                            @else
+                            <h1 class="font-16 text-right">{{ $totalsize }}KB/1000GB</h1>
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%; height: 6px;"
-                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <!-- Menyesuaikan value progress bar dengan ukuran yang telah dikonversi -->
+                        <div class="progress-bar bg-success" role="progressbar"
+                            style="width: {{ round($totalsize / (100 * 1024)) }}%; height: 6px;"
+                            aria-valuenow="{{ round($totalsize / (100 * 1024)) }}" aria-valuemin="0"
+                            aria-valuemax="100">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,8 +93,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-currency-eur font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Invoices</p>
+                            <i class="mdi mdi-briefcase font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Data Perkara</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">157</h1>
@@ -105,8 +118,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-poll font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Sales</p>
+                            <i class="mdi mdi-file-chart font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Data Pelaporan</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">236</h1>
@@ -130,8 +143,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-emoticon font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Clients</p>
+                            <i class="mdi mdi-gavel font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Jumlah Hakim</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">23</h1>
@@ -155,8 +168,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-image font-20  text-muted"></i>
-                            <p class="font-16 m-b-5">New Projects</p>
+                            <i class="fas fa-user font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Jumlah Pengacara</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">169</h1>
@@ -180,8 +193,8 @@
                 <div class="col-md-12">
                     <div class="d-flex no-block align-items-center">
                         <div>
-                            <i class="mdi mdi-currency-eur font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Invoices</p>
+                            <i class="mdi mdi-gavel font-20 text-muted"></i>
+                            <p class="font-16 m-b-5">Jumlah Jaksa</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">157</h1>
@@ -206,7 +219,7 @@
                     <div class="d-flex no-block align-items-center">
                         <div>
                             <i class="mdi mdi-poll font-20 text-muted"></i>
-                            <p class="font-16 m-b-5">New Sales</p>
+                            <p class="font-16 m-b-5">Data Pihak Terlibat</p>
                         </div>
                         <div class="ml-auto">
                             <h1 class="font-light text-right">236</h1>
@@ -224,95 +237,89 @@
     </div>
 </div>
 
-
 <div class="row">
-    <!-- column -->
-    <div class="col-lg-12 col-md-12">
-        <div class="card">
+
+    <div class="col-lg-12 col-md-">
+        <div class="card bg-success">
             <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <div>
-                        <h4 class="card-title mb-0">Latest Sales</h4>
-                    </div>
-                    <div class="ml-auto">
-                        <select class="custom-select border-0 text-muted">
-                            <option value="0" selected="">August 2018</option>
-                            <option value="1">May 2018</option>
-                            <option value="2">March 2018</option>
-                            <option value="3">June 2018</option>
-                        </select>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item flex-column active">
+                            <div class="d-flex no-block al m-r-15ign-items-center">
+                                <i class="cc EOS-alt text-white display-6 m-r-15" title="EOS"></i>
+                                <div class="m-t-10">
+                                    <h5 class="text-white font-medium">SIDANG</h5>
+                                    <h6 class="text-white">HARI INI</h6>
+                                </div>
+                                <div class="ml-auto m-t-15">
+                                    <div class="crypto"></div>
+                                </div>
+                            </div>
+                            <div class="row text-center text-white m-t-30">
+                                <div class="col-3">
+                                    <span class="font-14">RUANG</span>
+                                    <p class="font-medium"><i class="fas fa-university"></i> -</p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">TANGGAL</span>
+                                    <p class="font-medium"><i class="fas fa-calendar-alt"></i> -</p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">WAKTU MULAI</span>
+                                    <p class="font-medium"><i class="fas fa-clock"></i> -</p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">WAKTU SELESAI</span>
+                                    <p class="font-medium"><i class="fas fa-clock"></i> -</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        @foreach ($sidangs as $sidang)
+                        <div class="carousel-item flex-column">
+                            <div class="d-flex no-block al m-r-15ign-items-center">
+                                <i class="cc EOS-alt text-white display-6 m-r-15" title="EOS"></i>
+                                <div class="m-t-10">
+                                    <h5 class="text-white font-medium">SIDANG</h5>
+                                    <h6 class="text-white">Perkara : {{$sidang->perkara->nomor_perkara}}</h6>
+                                </div>
+                                <div class="ml-auto m-t-15">
+                                    <div class="crypto"></div>
+                                </div>
+                            </div>
+                            <div class="row text-center text-white m-t-30">
+                                <div class="col-3">
+                                    <span class="font-14">RUANG</span>
+                                    <p class="font-medium"><i class="fas fa-university"></i> {{$sidang->ruang_sidang}}
+                                    </p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">TANGGAL</span>
+                                    <p class="font-medium"><i class="fas fa-calendar-alt"></i> {{$sidang->tgl_sidang}}
+                                    </p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">WAKTU MULAI</span>
+                                    <p class="font-medium"><i class="fas fa-clock"></i>{{$sidang->waktu_mulai}}</p>
+                                </div>
+                                <div class="col-3">
+                                    <span class="font-14">WAKTU SELESAI</span>
+                                    <p class="font-medium"><i class="fas fa-clock"></i>{{$sidang->waktu_selesai}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
-            <div class="card-body bg-light">
-                <div class="row align-items-center">
-                    <div class="col-xs-12 col-md-6">
-                        <h3 class="m-b-0 font-light">August 2018</h3>
-                        <span class="font-14 text-muted">Sales Report</span>
-                    </div>
-                    <div class="col-xs-12 col-md-6 align-self-center display-6 text-info text-right">
-                        $3,690</div>
-                </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th class="border-top-0">NAME</th>
-                            <th class="border-top-0">STATUS</th>
-                            <th class="border-top-0">DATE</th>
-                            <th class="border-top-0">PRICE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-
-                            <td class="txt-oflo">Elite admin</td>
-                            <td><span class="label label-success label-rounded">SALE</span> </td>
-                            <td class="txt-oflo">April 18, 2017</td>
-                            <td><span class="font-medium">$24</span></td>
-                        </tr>
-                        <tr>
-
-                            <td class="txt-oflo">Real Homes WP Theme</td>
-                            <td><span class="label label-info label-rounded">EXTENDED</span></td>
-                            <td class="txt-oflo">April 19, 2017</td>
-                            <td><span class="font-medium">$1250</span></td>
-                        </tr>
-                        <tr>
-
-                            <td class="txt-oflo">Ample Admin</td>
-                            <td><span class="label label-purple label-rounded">Tax</span></td>
-                            <td class="txt-oflo">April 19, 2017</td>
-                            <td><span class="font-medium">$1250</span></td>
-                        </tr>
-                        <tr>
-
-                            <td class="txt-oflo">Medical Pro WP Theme</td>
-                            <td><span class="label label-success label-rounded">Sale</span></td>
-                            <td class="txt-oflo">April 20, 2017</td>
-                            <td><span class="font-medium">-$24</span></td>
-                        </tr>
-                        <tr>
-
-                            <td class="txt-oflo">Hosting press html</td>
-                            <td><span class="label label-success label-rounded">SALE</span></td>
-                            <td class="txt-oflo">April 21, 2017</td>
-                            <td><span class="font-medium">$24</span></td>
-                        </tr>
-                        <tr>
-
-                            <td class="txt-oflo">Digital Agency PSD</td>
-                            <td><span class="label label-danger label-rounded">Tax</span> </td>
-                            <td class="txt-oflo">April 23, 2017</td>
-                            <td><span class="font-medium">-$14</span></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
+
+
 </div>
+
+
 
 
 @endsection
