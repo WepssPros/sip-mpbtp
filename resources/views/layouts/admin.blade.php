@@ -10,7 +10,7 @@
         <meta name="author" content="">
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-        <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
+        <title>Sistem Informasi Kejaksaan Negeri Sungai Penuh</title>
 
         @include('components.admin.css')
 
