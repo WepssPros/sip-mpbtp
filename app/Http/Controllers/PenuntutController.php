@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jaksa;
 use App\Models\Penuntut;
 
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class PenuntutController extends Controller
      */
     public function create()
     {
-        return view('pages.penuntut.create');
+        $jaksas = Jaksa::all();
+        return view('pages.penuntut.create', compact('jaksas'));
     }
 
     /**
@@ -41,11 +43,11 @@ class PenuntutController extends Controller
             'no_hp_penuntut' => 'required',
             'alamat_penuntut' => 'required',
             'kasus_dugaan' => 'required',
-            'bukti_foto1' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'bukti_foto2' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'bukti_foto3' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'bukti_foto4' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'bukti_foto5' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'bukti_foto1' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
+            'bukti_foto2' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
+            'bukti_foto3' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
+            'bukti_foto4' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
+            'bukti_foto5' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
         ]);
 
         // Handle file upload for bukti_foto1

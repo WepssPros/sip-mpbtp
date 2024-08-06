@@ -11,6 +11,7 @@ class CatatanPerkara extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'no_putusan',
         'perkara_id',
         'jaksa_id',
         'tgl_catatan',

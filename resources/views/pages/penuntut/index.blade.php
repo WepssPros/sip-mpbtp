@@ -33,13 +33,13 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>No Tuntutan</th>
-                                <th>Nama Penuntut</th>
+                                <th>No Register</th>
+                                <th>Jaksa Penuntut</th>
                                 <th>Nama Terdakwa</th>
                                 <th>Umur Terdakwa</th>
                                 <th>Tanggal Tuntutan</th>
-                                <th>No Telepon Penuntut</th>
-                                <th>Alamat Penuntut</th>
+                                <th>No Jaksa Penuntut</th>
+                                <th>Alamat Jaksa Penuntut</th>
                                 <th>Kasus Dugaan</th>
                                 <th>Aksi</th>
                             </tr>

@@ -34,12 +34,14 @@
                         style="width:100%">
                         <thead>
                             <tr>
-                                <th rowspan="2">No Catatan Perkara</th>
-                                <th colspan="3" class="text-center">Detail Informasi</th>
+                                <th rowspan="2">No Putusan</th>
+                                <th rowspan="2">No Pelimpahan</th>
+                                <th colspan="4" class="text-center">Detail Informasi</th>
                                 <th rowspan="2">Aksi</th>
 
                             </tr>
                             <tr>
+
                                 <th>Jaksa Pembuat</th>
                                 <th>Tanggal Catatan</th>
                                 <th>Isi Catatan</th>
@@ -49,6 +51,7 @@
                         <tbody>
                             @foreach ($cps as $cp)
                             <tr>
+                                <td>{{$cp->no_putusan}}</td>
                                 <td>{{$cp->perkara->nomor_perkara}}</td>
                                 <td>{{$cp->jaksa->nama_jaksa}}</td>
                                 <td>{{$cp->tgl_catatan}}</td>

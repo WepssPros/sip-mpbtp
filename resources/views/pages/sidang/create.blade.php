@@ -46,16 +46,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <label for="perkara_id" class="control-label col-form-label">Pilih Nomor Perkara</label>
+                            <label for="perkara_id" class="control-label col-form-label">Pilih Nomor Pelimpah</label>
                             <div class="input-group">
                                 <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
                                     name="perkara_id" aria-label="Username" aria-describedby="basic-addon1"
                                     aria-describedby="basic-addon1">
-                                    <option>Pilih Nomor Perkara</option>
+                                    <option>Pilih Nomor Pelimpah</option>
                                     @foreach ($perkaras as $perkara)
-
                                     <option value="{{$perkara->id}}">{{$perkara->nomor_perkara}}</option>
-
                                     @endforeach
 
                                 </select>

@@ -37,10 +37,11 @@ class CatatanPerkaraController extends Controller
         // Validasi input
         $request->validate([
             'perkara_id' => 'required',
+            'no_putusan' => 'required',
             'jaksa_id' => 'required',
             'tgl_catatan' => 'required',
             'isicatatan' => 'required',
-            'file_1' => 'required|mimes:doc,docx,pdf,xls,xlsx|max:2048', // maksimal 2MB
+            'file_1' => 'required|mimes:doc,docx,pdf,xls,xlsx|max:12048', // maksimal 2MB
         ]);
 
         // Upload file
@@ -49,6 +50,7 @@ class CatatanPerkaraController extends Controller
         // Buat catatan baru
         $catatanPerkara = CatatanPerkara::create([
             'perkara_id' => $request->perkara_id,
+            'no_putusan' => $request->no_putusan,
             'jaksa_id' => $request->jaksa_id,
             'tgl_catatan' => $request->tgl_catatan,
             'isicatatan' => $request->isicatatan,

@@ -35,7 +35,7 @@
                         <thead>
                             <tr>
 
-                                <th rowspan="2">No Perkara</th>
+                                <th rowspan="2">No Pelimpahan</th>
                                 <th colspan="5" class="text-center">Detail Informasi Pihak Terlibat</th>
 
                                 <th colspan="0">Aksi</th>

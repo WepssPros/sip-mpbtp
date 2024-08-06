@@ -39,7 +39,7 @@
                         style="width:100%">
                         <thead>
                             <tr>
-                                <th rowspan="2">No Perkara</th>
+                                <th rowspan="2">No Pelimpahan</th>
                                 <th colspan="5" class="text-center">Detail Informasi Sidang</th>
 
                                 <th rowspan="0">Aksi</th>

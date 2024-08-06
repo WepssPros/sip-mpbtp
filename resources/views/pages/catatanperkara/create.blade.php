@@ -44,16 +44,29 @@
                 <div class="card-body">
                     <div class="row">
 
+                        <div class="col-12">
+                            <label for="inputEmail3" class="control-label col-form-label">Buat Nomor Putusan
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i
+                                            class="fas fa-address-card"></i></span>
+                                </div>
+                                <input type="text" id="no_putusan" name="no_putusan" class="form-control"
+                                    placeholder="Masukan Nomor Putusan" maxlength="18" required>
 
+                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Cari No Tuntutan
+                                <label for="inputEmail3" class="control-label col-form-label">Cari No Pelimpah
                                 </label>
                                 <div class="input-group">
+
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
                                         name="perkara_id" aria-label="Username" aria-describedby="basic-addon1"
                                         aria-describedby="basic-addon1">
-                                        <option>Cari No Tuntutan</option>
+                                        <option>Cari No Pelimpah</option>
                                         <optgroup label="Nomor Tuntuan Terdata">
                                             @foreach ($perkaras as $perkara)
                                             <option value="{{$perkara->id}}">
@@ -92,7 +105,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Tanggal Catatan
+                                <label for="inputEmail3" class="control-label col-form-label">Tanggal Putusan
                                 </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -108,28 +121,28 @@
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Isi Catatan
+                                <label for="inputEmail3" class="control-label col-form-label">Isi Putusan
                                 </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon11"><i
                                                 class="fas fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Isi Catatan " name="isicatatan"
+                                    <input type="text" class="form-control" placeholder="Isi Putusan " name="isicatatan"
                                         aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Dokumen Catatan
+                                <label for="inputEmail3" class="control-label col-form-label">Dokumen Putusan
                                 </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon11"><i
                                                 class="fas fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="file" class="form-control" placeholder="Masukan File Dokumen Catatan  "
+                                    <input type="file" class="form-control" placeholder="Masukan File Dokumen Putusan  "
                                         name="file_1" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>

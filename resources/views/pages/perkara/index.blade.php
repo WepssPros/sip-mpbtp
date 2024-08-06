@@ -34,13 +34,13 @@
                         style="width:100%">
                         <thead>
                             <tr>
-                                <th rowspan="2">No Perkara</th>
+                                <th rowspan="2">No Pelimpah</th>
                                 <th colspan="5" class="text-center">Detail Informasi</th>
                                 <th colspan="1">Tanggal Putusan</th>
                                 <th rowspan="1">Aksi</th>
                             </tr>
                             <tr>
-                                <th>Tanggal Pendaftaran</th>
+                                <th>Tanggal Pelimpahan</th>
                                 <th>Jenis Tindak Pidana</th>
                                 <th>Status</th>
                                 <th>Jaksa Penanggung Jawab</th>

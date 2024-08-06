@@ -54,63 +54,54 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <label for="inputEmail3" class="control-label col-form-label">Nomor Penuntut</label>
+                            <label for="inputEmail3" class="control-label col-form-label">Nomor Register</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i
                                             class="fas fa-address-card"></i></span>
                                 </div>
                                 <input type="text" id="no_tuntutan" name="no_tuntutan" class="form-control"
-                                    placeholder=".../..../....../...." maxlength="18" required>
-                                <script>
-                                    // Mendapatkan elemen input
-                                    var nomorBerkasInput = document.getElementById("no_tuntutan");
-                                
-                                    // Menyimpan placeholder awal
-                                    var placeholderAwal = ".../..../....../....";
-                                
-                                    // Mendengarkan peristiwa "input" pada elemen
-                                    nomorBerkasInput.addEventListener("input", function () {
-                                        var value = nomorBerkasInput.value;
-                                
-                                        // Menyimpan placeholder saat ini
-                                        var placeholderSaatIni = nomorBerkasInput.placeholder;
-                                
-                                        // Menyesuaikan format jika panjang input mencapai 3, 8, 14
-                                        if (value.length === 3 || value.length === 8 || value.length === 14) {
-                                            value += "/";
-                                        }
-                                
-                                        // Mengisi titik-titik dengan angka atau karakter sesuai dengan berkas yang diinputkan
-                                        if (value.length > 18) {
-                                            // Misalnya, mengganti titik-titik dengan karakter sesuai dengan berkas yang diinputkan
-                                            nomorBerkasInput.value = value.replace(/\.{4}/, '/PMK.03/2022');
-                                        }
-                                
-                                        // Memasukkan nilai yang telah dimodifikasi kembali ke input
-                                        if (value.length <= 18) {
-                                            nomorBerkasInput.value = value.substring(0, 18);
-                                        }
-                                
-                                        // Mengembalikan placeholder ke nilai awal jika input kosong
-                                        if (nomorBerkasInput.value === "" && placeholderSaatIni === "") {
-                                            nomorBerkasInput.placeholder = placeholderAwal;
-                                        }
-                                    });
-                                </script>
+                                    placeholder="Masukan Nomor Register" maxlength="18" required>
+
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Nama
-                                    Penuntut</label>
+                                <label for="inputEmail3" class="control-label col-form-label">Jaksa Penuntut
+                                </label>
+                                <div class="input-group">
+                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
+                                        name="nama_penuntut" aria-label="Username" aria-describedby="basic-addon1"
+                                        aria-describedby="basic-addon1">
+
+                                        <option>Cari Jaksa Penuntut</option>
+                                        <optgroup label="Nomor Tuntuan Terdata">
+                                            @foreach ($jaksas as $jaksa)
+                                            <option value="{{$jaksa->nama}}">
+                                                {{$jaksa->nama_jaksa}}
+                                            </option>
+                                            @endforeach
+
+
+                                        </optgroup>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label col-form-label">Nomor Telepon Jaksa
+                                    Penuntut
+                                </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon11"><i
-                                                class="fas fa-user"></i></span>
+                                                class="fas fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Nama Penuntut "
-                                        name="nama_penuntut" aria-label="Username" aria-describedby="basic-addon1">
+                                    <input type="number" class="form-control" placeholder="Nomor Telepon Jaksa Penuntut"
+                                        name="no_hp_penuntut" " aria-label=" Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>
@@ -157,23 +148,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Nomor Telepon Penuntut
-                                </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon11"><i
-                                                class="fas fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="number" class="form-control" placeholder="Nomor Telepon Penuntut"
-                                        name="no_hp_penuntut" " aria-label=" Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Alamat Penuntut
+                                <label for="inputEmail3" class="control-label col-form-label">Alamat Jaksa Penuntut
                                 </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">

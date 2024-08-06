@@ -129,18 +129,19 @@
                         <span class="hide-menu">Buat Data Sidang</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="{{route('dashboard.catatanperkara.create')}}" aria-expanded="false">
-                        <i class="mdi mdi-content-paste"></i>
-                        <span class="hide-menu">Buat Data Catatan Perkara</span>
-                    </a>
-                </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="{{route('dashboard.pihakterlibat.create')}}" aria-expanded="false">
                         <i class="mdi mdi-content-paste"></i>
                         <span class="hide-menu">Buat Data Pihak Terlibat</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('dashboard.catatanperkara.create')}}" aria-expanded="false">
+                        <i class="mdi mdi-content-paste"></i>
+                        <span class="hide-menu">Buat Data Catatan Perkara</span>
                     </a>
                 </li>
 

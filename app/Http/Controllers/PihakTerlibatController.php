@@ -39,7 +39,7 @@ class PihakTerlibatController extends Controller
             'alamat' => 'nullable',
             'tipe_pihak' => 'nullable',
             'no_hp_pihak_terlibat' => 'nullable',
-            'file_1' => 'required|mimes:doc,docx,pdf|max:2048', // maksimal 2MB
+            'file_1' => 'required|mimes:doc,docx,pdf|max:10240', // maksimal 2MB
         ]);
 
         // Upload file
