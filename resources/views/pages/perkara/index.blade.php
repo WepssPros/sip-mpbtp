@@ -35,13 +35,14 @@
                         <thead>
                             <tr>
                                 <th rowspan="2">No Pelimpah</th>
-                                <th colspan="5" class="text-center">Detail Informasi</th>
+                                <th colspan="6" class="text-center">Detail Informasi</th>
                                 <th colspan="1">Tanggal Putusan</th>
                                 <th rowspan="1">Aksi</th>
                             </tr>
                             <tr>
                                 <th>Tanggal Pelimpahan</th>
                                 <th>Jenis Tindak Pidana</th>
+                                <th>Nama Terdakwa</th>
                                 <th>Status</th>
                                 <th>Jaksa Penanggung Jawab</th>
                                 <th>Hakim Putusan</th>
@@ -56,6 +57,7 @@
                                 <td>{{$perkara->nomor_perkara}}</td>
                                 <td>{{$perkara->tanggal_pendaftaran}}</td>
                                 <td>{{$perkara->kategoritindakpidana->no_kategori_pidana}}</td>
+                                <td>{{$perkara->nama_terdakwa}}</td>
                                 <td>{{$perkara->status_perkara}}</td>
                                 <td>{{$perkara->jaksa->nama_jaksa}}</td>
                                 <td>{{$perkara->hakim->nama_hakim}}</td>
