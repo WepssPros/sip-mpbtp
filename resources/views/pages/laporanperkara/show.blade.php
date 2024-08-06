@@ -250,8 +250,8 @@
                         </tr>
                         <tr>
                             <th>Jaksa Penuntut Umum</th>
-                            <th>Tanggal Catatan</th>
-                            <th>Isi Catatan</th>
+                            <th>Tanggal Putusan</th>
+                            <th>Isi Putusan</th>
                             <th>Dokumen</th>
                         </tr>
                     </thead>
