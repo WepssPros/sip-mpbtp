@@ -42,10 +42,10 @@
 
                             </tr>
                             <tr>
-                                <th>Tanggal Pendaftaran</th>
+                                <th>Tanggal Pelimpahan</th>
                                 <th>Jenis Tindak Pidana</th>
                                 <th>Status</th>
-                                <th>Jaksa Penanggung Jawab</th>
+                                <th>Jaksa Penuntut Umum</th>
                                 <th>Hakim Putusan</th>
                                 <th>Tanggal Putusan</th>
 
@@ -205,8 +205,8 @@
                             <th>No Tuntutan</th>
 
                             <th>Tanggal Tuntutan</th>
-                            <th>No Telepon Penuntut</th>
-                            <th>Alamat Penuntut</th>
+                            <th>No Telepon Jaksa Penuntut</th>
+                            <th>Alamat Jaksa</th>
                             <th>Kasus Dugaan</th>
                             <th>Detail Tuntutan</th>
                         </tr>
@@ -249,7 +249,7 @@
 
                         </tr>
                         <tr>
-                            <th>Jaksa Pembuat</th>
+                            <th>Jaksa Penuntut Umum</th>
                             <th>Tanggal Catatan</th>
                             <th>Isi Catatan</th>
                             <th>Dokumen</th>
