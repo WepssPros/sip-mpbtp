@@ -44,7 +44,7 @@
                                 <th>Jenis Tindak Pidana</th>
                                 <th>Nama Terdakwa</th>
                                 <th>Status</th>
-                                <th>Jaksa Penanggung Jawab</th>
+                                <th>Jaksa Penuntut Umum</th>
                                 <th>Hakim </th>
                                 <th>Tanggal Tuntutan</th>
                                 <td>Aksi</td>
