@@ -27,14 +27,14 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Data Master Perkara </h4>
+                <h4 class="card-title">Data Master Laporan </h4>
 
                 <div class="table-responsive">
                     <table id="complex_head_col" class="table table-striped table-bordered display responsive"
                         style="width:100%">
                         <thead>
                             <tr>
-                                <th rowspan="2">No Perkara</th>
+                                <th rowspan="2">No Pelimpahan</th>
                                 <th colspan="5" class="text-center">Detail Informasi</th>
                                 <th colspan="1">Tanggal Putusan</th>
                                 <th rowspan="1">Aksi</th>
