@@ -61,7 +61,7 @@
                                             class="fas fa-address-card"></i></span>
                                 </div>
                                 <input type="text" id="no_tuntutan" name="no_tuntutan" class="form-control"
-                                    placeholder="Masukan Nomor Register" maxlength="18" required>
+                                    placeholder="Masukan Nomor Register" maxlength="30" required>
 
                             </div>
                         </div>
