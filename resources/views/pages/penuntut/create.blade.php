@@ -77,7 +77,7 @@
                                         <option>Cari Jaksa Penuntut</option>
                                         <optgroup label="Nomor Tuntuan Terdata">
                                             @foreach ($jaksas as $jaksa)
-                                            <option value="{{$jaksa->nama}}">
+                                            <option value="{{$jaksa->nama_jaksa}}">
                                                 {{$jaksa->nama_jaksa}}
                                             </option>
                                             @endforeach
