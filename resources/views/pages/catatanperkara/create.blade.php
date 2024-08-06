@@ -66,7 +66,7 @@
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
                                         name="perkara_id" aria-label="Username" aria-describedby="basic-addon1"
                                         aria-describedby="basic-addon1">
-                                        <option>Cari No Pelimpah</option>
+                                        <option>Cari No Pelimpahan</option>
                                         <optgroup label="Nomor Tuntuan Terdata">
                                             @foreach ($perkaras as $perkara)
                                             <option value="{{$perkara->id}}">
