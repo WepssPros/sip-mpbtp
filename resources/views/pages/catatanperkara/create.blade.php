@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Cari No Pelimpah
+                                <label for="inputEmail3" class="control-label col-form-label">Cari No Pelimpahan
                                 </label>
                                 <div class="input-group">
 
