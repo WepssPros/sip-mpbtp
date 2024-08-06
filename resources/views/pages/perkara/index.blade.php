@@ -45,7 +45,7 @@
                                 <th>Nama Terdakwa</th>
                                 <th>Status</th>
                                 <th>Jaksa Penanggung Jawab</th>
-                                <th>Hakim Putusan</th>
+                                <th>Hakim </th>
                                 <th>Tanggal Tuntutan</th>
                                 <td>Aksi</td>
                                 <td></td>
