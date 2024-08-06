@@ -123,11 +123,11 @@ class PenuntutController extends Controller
             'no_hp_penuntut' => 'required',
             'alamat_penuntut' => 'required',
             'kasus_dugaan' => 'required',
-            'bukti_foto1' => 'image|mimes:jpeg,png,jpg,gif',
-            'bukti_foto2' => 'image|mimes:jpeg,png,jpg,gif',
-            'bukti_foto3' => 'image|mimes:jpeg,png,jpg,gif',
-            'bukti_foto4' => 'image|mimes:jpeg,png,jpg,gif',
-            'bukti_foto5' => 'image|mimes:jpeg,png,jpg,gif',
+            'bukti_foto1' => 'image|mimes:jpeg,png,jpg,gif,pdf',
+            'bukti_foto2' => 'image|mimes:jpeg,png,jpg,gif,pdf',
+            'bukti_foto3' => 'image|mimes:jpeg,png,jpg,gif,pdf',
+            'bukti_foto4' => 'image|mimes:jpeg,png,jpg,gif,pdf',
+            'bukti_foto5' => 'image|mimes:jpeg,png,jpg,gif,pdf',
         ]);
 
         // Handle file upload for bukti_foto1
