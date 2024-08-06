@@ -46,7 +46,7 @@
                                 <th>Status</th>
                                 <th>Jaksa Penanggung Jawab</th>
                                 <th>Hakim Putusan</th>
-                                <th>Tanggal Putusan</th>
+                                <th>Tanggal Tuntutan</th>
                                 <td>Aksi</td>
                                 <td></td>
                             </tr>
