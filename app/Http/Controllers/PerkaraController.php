@@ -54,7 +54,7 @@ class PerkaraController extends Controller
             'jaksa_id' => 'required',
             'jenis_tindak_pidana_id' => 'required',
             'nomor_perkara' => 'required',
-            'tanggal_pendaftaran' => 'required',gi
+            'tanggal_pendaftaran' => 'required',
             'alamat_terdakwa' => 'required',
             'status_perkara' => 'required',
         ]);
