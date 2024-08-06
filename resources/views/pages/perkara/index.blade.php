@@ -36,7 +36,7 @@
                             <tr>
                                 <th rowspan="2">No Pelimpah</th>
                                 <th colspan="6" class="text-center">Detail Informasi</th>
-                                <th colspan="1">Tanggal Putusan</th>
+                                <th colspan="1">Tanggal Tuntutan</th>
                                 <th rowspan="1">Aksi</th>
                             </tr>
                             <tr>
