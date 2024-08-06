@@ -174,20 +174,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Nama Terdakwa
-                                </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon11"><i
-                                                class="fas fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Nama Terdakwa / Tersangka "
-                                        name="nama_terdakwa" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Alamat Terdakwa
@@ -202,20 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Tanggal Tuntutan
-                                </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon11"><i
-                                                class="fas fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="date" class="form-control" placeholder="Tanggal Tuntutan "
-                                        name="tanggal_putusan" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <hr>
