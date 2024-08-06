@@ -51,7 +51,7 @@
                                             class="fas fa-address-card"></i></span>
                                 </div>
                                 <input type="text" id="no_perkara" name="nomor_perkara" class="form-control"
-                                    placeholder="Masukan Nomor Pelimpah" maxlength="18" required>
+                                    placeholder="Masukan Nomor Pelimpah" maxlength="35" required>
 
                             </div>
                         </div>

@@ -43,7 +43,7 @@ class PenuntutController extends Controller
             'no_hp_penuntut' => 'required',
             'alamat_penuntut' => 'required',
             'kasus_dugaan' => 'required',
-            'bukti_foto1' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
+            'bukti_foto1' => 'required|mimes:jpeg,png,jpg,gif,pdf|max:10240',
             'bukti_foto2' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
             'bukti_foto3' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',
             'bukti_foto4' => 'image|mimes:jpeg,png,jpg,gif,pdf|max:10240',

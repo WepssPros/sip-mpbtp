@@ -79,7 +79,7 @@
                                             class="fas fa-address-card"></i></span>
                                 </div>
                                 <input type="text" id="no_perkara" name="no_pihak_t" class="form-control"
-                                    placeholder="Nomor Pihak Terlibat" maxlength="18" required>
+                                    placeholder="Nomor Pihak Terlibat" maxlength="35" required>
 
                             </div>
                         </div>
