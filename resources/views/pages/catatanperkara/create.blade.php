@@ -86,7 +86,7 @@
                         <div class="col-sm-12 ">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Pilih Jaksa
-                                    Terdata</label>
+                                    Penuntut Umum</label>
                                 <div class="input-group">
 
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
