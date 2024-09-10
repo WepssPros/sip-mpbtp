@@ -67,44 +67,67 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Jaksa Penuntut
-                                </label>
+                                <label for="inputEmail3" class="control-label col-form-label">Jaksa Penuntut</label>
                                 <div class="input-group">
-                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;"
-                                        name="nama_penuntut" aria-label="Username" aria-describedby="basic-addon1"
+                                    <select id="jaksaPenuntut" class="select2 form-control custom-select"
+                                        style="width: 100%; height:36px;" name="nama_penuntut" aria-label="Username"
                                         aria-describedby="basic-addon1">
-
-                                        <option>Cari Jaksa Penuntut</option>
+                                        <option value="" disabled selected>Cari Jaksa Penuntut</option>
                                         <optgroup label="Nomor Tuntuan Terdata">
                                             @foreach ($jaksas as $jaksa)
-                                            <option value="{{$jaksa->nama_jaksa}}">
-                                                {{$jaksa->nama_jaksa}}
+                                            <option value="{{ $jaksa->nama_jaksa }}"
+                                                data-phone="{{ $jaksa->nomor_telepon }}"
+                                                data-address="{{ $jaksa->alamat_jaksa }}">
+                                                {{ $jaksa->nama_jaksa }}
                                             </option>
                                             @endforeach
-
-
                                         </optgroup>
-
                                     </select>
-
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Nomor Telepon Jaksa
-                                    Penuntut
-                                </label>
+                                    Penuntut</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon11"><i
                                                 class="fas fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="number" class="form-control" placeholder="Nomor Telepon Jaksa Penuntut"
-                                        name="no_hp_penuntut" " aria-label=" Username" aria-describedby="basic-addon1">
+                                    <input type="number" id="noHpPenuntut" class="form-control"
+                                        placeholder="Nomor Telepon Jaksa Penuntut" name="no_hp_penuntut"
+                                        aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label col-form-label">Alamat Jaksa
+                                    Penuntut</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon11"><i
+                                                class="fas fa-calendar-alt"></i></span>
+                                    </div>
+                                    <textarea class="form-control" name="alamat_penuntut" id="alamatPenuntut" cols="30"
+                                        rows="10" aria-label="Username" aria-describedby="basic-addon1"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            $(document).ready(function() {
+                                $('#jaksaPenuntut').change(function() {
+                                    var phoneNumber = $(this).find(':selected').data('phone');
+                                    var address = $(this).find(':selected').data('address');
+                                    $('#noHpPenuntut').val(phoneNumber);
+                                    $('#alamatPenuntut').val(address);
+                                });
+                            });
+                        </script>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Nama
@@ -119,6 +142,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Umur
@@ -149,20 +173,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="control-label col-form-label">Alamat Jaksa Penuntut
-                                </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon11"><i
-                                                class="fas fa-calendar-alt"></i></span>
-                                    </div>
-                                    <textarea class="form-control" name="alamat_penuntut" id="alamat_penuntut" cols="30"
-                                        rows="10" aria-label=" Username" aria-describedby="basic-addon1"></textarea>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="control-label col-form-label">Kasus Dugaan
